@@ -1,0 +1,179 @@
+.mainMenu{
+    background-color: rgba(128, 128, 128, 0.4);
+    font-weight: bold;
+}
+.mainHeading {
+    text-align: center;
+    font-size: 1.5em;  
+    color:  rgba(155, 0, 0);
+    background-color: rgba(128, 128, 128, 0.4);
+}
+
+body {
+    background-color:  rgb(0, 32, 51) ;
+}
+
+.navbarList{
+    padding-right: 5px;
+}
+
+.mainButton{
+    background: transparent;
+    border: none;
+    font-size: 4em;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: rgba(155, 0, 0 , 0.85)
+}
+
+.footer {
+    background-color: rgb(0, 32, 51);
+    width: 100%;
+}
+
+.footerDiv{
+    color: white;
+}
+
+.mensdiv img {
+    margin-top: 30px ;
+}
+
+.womensdiv img{
+    margin-top: 30px;
+}
+
+.manspant {
+    color: white;
+    margin-left: 50px;
+}
+
+.menbuttons {
+    margin-top: 30px;
+    color: white;
+    border-style: solid;
+    border-radius: 10px;
+    border-width: 2px;
+    border-color: white;
+ }
+
+ .womenbuttons {
+     margin-top: 30px;
+     color: white;
+     border-style: solid;
+     border-radius: 10px;
+     border-width: 2px;
+     border-color: rgb(44, 194, 144);  
+ }
+
+ .aboutusdiv h1 {
+    color: rgba(255, 194, 25, 0.705);
+ }
+
+ .aboutusdiv p {
+     color: white;
+     line-height: 2.0em;
+ }
+
+ .signupdiv h1 {
+     color: rgba(255, 194, 25, 0.705) ;
+     text-align: center;
+ }
+
+ .signupform {
+     color: rgba(255, 194, 25, 0.705) ;
+     font-size: 1.1em;
+ }
+
+ .loginform{
+    color: rgba(255, 194, 25, 0.705) ;
+    font-size: 1.1em;
+ }
+
+ ion-icon {
+     color: rgb(201, 201, 201);
+     font-size: 30px;
+     margin-left: 3px;
+     margin-right: 3px;
+ }
+
+ .cart {
+     background-color: rgb(65, 65, 255);
+     color: white;
+     text-decoration: none;
+     cursor: pointer;
+     border: none;
+ }
+
+
+  /* .........................................Carts page...................................... */
+
+.product-header {
+    color: white;
+    border-bottom: 2px solid rgb(73, 73, 73);
+}
+
+.product-container {
+    justify-content: space-around;
+    margin: 0 auto;
+    margin-top: 50px;
+    display: flex-start ;
+}
+
+.products {
+    color: white;
+    margin: 0 auto;
+}
+
+.product {
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid rgb(73, 73, 73);
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+ 
+
+.products ion-icon {
+    color: rgb(253, 182, 51) ;
+    cursor: pointer;
+    font-size: 25px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.price {
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid rgb(73, 73, 73);
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+
+.quantity {
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid rgb(73, 73, 73);
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+
+.total {
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid rgb(73, 73, 73);
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+
+.basketCostContainer {
+    display: flex;
+    margin-top: 20px;
+}
+
+.basketTotal {
+    margin-left: 20px;
+}
+
+.basketTotalTitle {
+    margin-left: 50px;
+}
