@@ -2,10 +2,13 @@ var firstname = document.getElementById("firstname");
 var lastname = document.getElementById("lastname");
 var password = document.getElementById("password");
 var email = document.getElementById("email");
+var loginbtn= document.getElementsByClassName("loginBtn");
+var signupBtn = document.getElementsByClassName("signupBtn");
 
 function callNumber() {
     alert("Do you want to call the number ?")
 }
+
 
 function showsignedup() {
     if (firstname.value.length === 0) {

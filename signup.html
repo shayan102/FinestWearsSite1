@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
+    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
@@ -125,26 +127,26 @@
                     <form class="signupform">
 
                         <p> First Name <br>
-                            <input type="text" id="firstname" name="firstname" size="30" maxlength="30">
+                            <input type="text" id="firstname" name="firstname" placeholder="Enter your first name" size="30" maxlength="30">
                         </p>
 
                         <p> Last Name <br>
-                            <input type="text" id="lastname" name="lastname" size="30" maxlength="30">
+                            <input type="text" id="lastname" name="lastname" placeholder="Enter your last name" size="30" maxlength="30">
                         </p>
 
                         <p> Email <br>
-                            <input type="text" id="email" name="email" size="30" maxlength="30">
+                            <input type="text" id="email" name="email" size="30" placeholder="Enter a valid Email" maxlength="30">
                         </p>
 
                         <p>Password <br>
-                            <input type="password" id="password" name="password" size="30" maxlength="30">
+                            <input type="password" id="password" name="password" placeholder="Enter a password" size="30" maxlength="30">
                             <br><br>
 
                             <input type="checkbox" name="updates" checked="checked" value="getupdates"> Do you want us
                             to send updates ?
                         </p>
 
-                        <button type="button" class="btn btn-warning" onclick="showsignedup();">Sign Up</button>
+                        <button type="button" class="btn btn-warning" class="signupBtn" onclick="showsignedup();">Sign Up</button>
                     </form>
                     <p style=" color: rgba(255, 194, 25, 0.705) ;">Already have an account? <a href="Login.html">Login</a></p>
                 </div>
