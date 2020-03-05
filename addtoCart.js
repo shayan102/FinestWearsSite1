@@ -316,7 +316,7 @@ let products = [
     },
     {
         name: "Men formal boot",
-        tag: "brownformalboot",
+        tag: "brownformalboot2",
         price: 1899,
         inCart: 0
     },
@@ -526,7 +526,7 @@ let products = [
     },
     {
         name: "Women fancy party dress",
-        tag: "goldenpartydress",
+        tag: "goldenpartydress2",
         price: 5099,
         inCart: 0
     },
@@ -676,7 +676,7 @@ let products = [
     },
     {
         name: "Boy shalwar kameez",
-        tag: "boywhitesuit",
+        tag: "boywhitesuit2",
         price: 1999,
         inCart: 0
     },
@@ -688,7 +688,7 @@ let products = [
     },
     {
         name: "Boy kameez pajama",
-        tag: "boysilversuit",
+        tag: "boysilversuit2",
         price: 1899,
         inCart: 0
     },
@@ -749,7 +749,7 @@ function setItems(product) {
     let cartItems = localStorage.getItem('productsInCart');
     cartItems = JSON.parse(cartItems);
 
-    if (cartItems != null) {
+    if (cartItems != null ) {
 
         if (cartItems[product.tag] == undefined) {
             cartItems = {
@@ -770,7 +770,7 @@ function setItems(product) {
 function totalCost(product) {
     let cartCost = localStorage.getItem('totalCost');
 
-    if (cartCost != null) {
+    if (cartCost != null || cartCost == "0") {
         cartCost = parseInt(cartCost);
         localStorage.setItem('totalCost', cartCost + product.price);
     } else {
@@ -783,15 +783,16 @@ function displayCart() {
     cartItems = JSON.parse(cartItems);
     let productContainer = document.querySelector(".products");
     let cartCost = localStorage.getItem('totalCost');
+    let productNumbers = localStorage.getItem('cartNumbers');
 
     console.log(cartItems);
 
-    if (cartItems && productContainer) {
+    if (cartItems && productContainer && productNumbers != 0) {
         productContainer.innerHTML = '';
         Object.values(cartItems).map(item => {
             productContainer.innerHTML += `
-            <div class = "col-3 col-sm-5 col-lg-5 product"> 
-            <ion-icon name="close-circle-outline"></ion-icon> 
+            <div class = "col-3 col-sm-5 col-lg-5 product">  
+            <span><img src="images/${item.tag}.jpg" width="50px" height="50px"></span> &nbsp   
             <span>${item.name}</span>
             </div>
 
@@ -799,38 +800,69 @@ function displayCart() {
         </div>
 
         <div class = "col-4 col-sm-3 col-lg-3 quantity" >
-        <ion-icon class= "decrease" onclick = ""
-         name="arrow-back-circle-outline"></ion-icon>
          <span>${item.inCart}</span>
-         <ion-icon class="increase" onclick = "addInQuantity();"
-          name="arrow-forward-circle-outline"></ion-icon>
       </div>
             <div class="col-2 col-sm-2 col-lg-2 total"> ${item.inCart * item.price}.00Rs </div>
+
             `
         });
 
         productContainer.innerHTML += `
         
-        <div class ="offset-6 col-6 offset-7 col-sm-5 col-lg-5  basketCostContainer">
+        <div class ="col-6 offset-6 col-sm-5 col-lg-5  basketCostContainer">
         <h4 class = "basketTotalTitle">
           Basket Total Cost: </h4>
           <h4 class = "basketTotal" >
             ${cartCost}.00Rs
           </h4>
-          </div>
-        ` ;
+          </div> 
+          ` ;
     }
-}
 
-function addInQuantity() {
-    let cartItems = localStorage.getItem("productsInCart");
-    cartItems = JSON.parse(cartItems);
-    console.log(cartItems);
-    let cartObject = Object.values(cartItems);
-    let updatedQuantity = (cartObject.inCart) ;
-    console.log(updatedQuantity);
-}
+    productContainer.innerHTML += `
 
+          <div class="container">
+          <div class="row row-content">
+              <div class="col-12 col-sm-7 col-lg-7">
+              </div>
+
+              <div class="col-12 col-sm-5 col-lg-5 cart-buttons">
+                  <button type="button" class="btn btn-warning btn-lg clear-cart-btn">
+                      Clear Cart
+                  </button>
+                  <button type="submit" class="btn btn-warning btn-lg submit-cart-btn">
+                      Submit Order
+                  </button>
+
+              </div>
+          </div>
+      </div>
+        ` ;
+
+
+    var removeButton = document.getElementsByClassName("clear-cart-btn");
+    for (let i = 0; i < removeButton.length; i++) {
+        removeButton[i].addEventListener('click', removeCartItem)
+    };
+
+    function removeCartItem(event) {
+        var buttonClicked = event.target ;
+        var productsInCart = localStorage.getItem('productsInCart');
+        if (productsInCart) {
+            for (var i = 0; i < removeButton.length; i++) {
+                buttonClicked.parentElement.parentElement.parentElement.parentElement.remove();
+            }
+            localStorage.setItem('cartNumbers', 0);
+            localStorage.setItem('totalCost', 0);
+            localStorage.setItem('productsInCart', JSON.stringify(''))
+            let productNumbers = localStorage.getItem('cartNumbers');
+
+            if (productNumbers) {
+                document.querySelector('.cart span').textContent = productNumbers;
+            }
+        }
+    };
+};
 
 onLoadCartNumber();
 displayCart();
